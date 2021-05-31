@@ -1,7 +1,7 @@
 import React from 'react'
-import DisplayAllPosts from './DisplayAllPosts';
+// import DisplayAllPosts from './DisplayAllPosts';
 
-const CreateNewPost = () => {
+const CreateNewPost = (props) => {
     return (
         <>
             <form>
@@ -12,6 +12,7 @@ const CreateNewPost = () => {
                     placeholder="title" 
                     size="39" 
                     required 
+                    ref={props.getTitle}
                 />
                 <br />
                 <br />
@@ -21,10 +22,12 @@ const CreateNewPost = () => {
                     rows="8" 
                     cols="41" 
                     required 
+                    ref={props.getContent}
                 ></textarea>
                 <br />
                 <br />
-                <button>Save Post</button>
+                <button 
+                    onClick={props.savePost} >Save Post</button>
             </form>
         </>
     )

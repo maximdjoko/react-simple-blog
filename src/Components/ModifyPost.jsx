@@ -1,17 +1,29 @@
 import React from 'react'
 
-const ModifyPost = () => {
+const ModifyPost = (props) => {
     return (
         <>
             <form >
                 <h1>Modify Post</h1>
-                <input type="text" placeholder="title" size="39" required />
+                <input 
+                    defaultValue={props.title}
+                    onChange={props.savePostTitleToState}
+                    type="text" 
+                    placeholder="title" 
+                    size="39" 
+                />
                 <br />
                 <br />
-                <textarea placeholder="Contents" cols="41" rows="8"></textarea>
+                <textarea 
+                    defaultValue={props.content}
+                    onChange={props.savePostContentToState}
+                    placeholder="Contents" 
+                    cols="41" 
+                    rows="8"
+                ></textarea>
                 <br />
                 <br />
-                <button>Update Post</button>
+                <button onClick={props.updatePost}>Update Post</button>
             </form>
         </>
     )
