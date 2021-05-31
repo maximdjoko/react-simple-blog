@@ -1,6 +1,4 @@
-import CreateNewPost from "./Components/CreateNewPost";
 import DisplayAllPosts from "./Components/DisplayAllPosts";
-import Post from "./Components/Post";
 
 function App() {
   return (
